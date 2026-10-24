@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Merge & convert: merge, split, compress and convert PDF, Word, Excel, PowerPoint</title>
+<meta name="description" content="Free online tool to merge, split, compress and convert PDF, Word, Excel, PowerPoint, Markdown and image files. Compress to an exact KB or MB size. Most tools run in your browser.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Merge & convert">
+<meta property="og:description" content="Merge, split, compress and convert PDF, Word, Excel, PowerPoint and image files in your browser.">
+<meta property="og:image" content="icon-512.png">
+<link rel="icon" href="favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
+<link rel="icon" type="image/png" sizes="32x32" href="icon-32.png?v=2">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+<link rel="manifest" href="site.webmanifest?v=2">
+<meta name="theme-color" content="#4f46e5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>window.API_URL=location.protocol==="file:"?"http://localhost:3000":""</script>
+<link rel="stylesheet" href="css/styles.css"></head><body>
+
+<header>
+ <button class="btn g" id="colbtn" aria-label="Collapse sidebar"><i data-ic="panel"></i></button>
+ <a class="logo" href="#home" aria-label="Merge &amp; convert home"><img class="mark" src="favicon.svg?v=2" alt="" width="32" height="32"><span>Merge &amp; convert</span></a>
+ <nav id="nav"><a href="#merge">Merge</a><a href="#split">Split PDF</a><a href="#compress">Compress</a><a href="#topdf">Convert to PDF</a><a href="#frompdf">Convert from PDF</a></nav>
+ <div class="srch"><i class="si" data-ic="search"></i><input id="q" placeholder="Search tools... e.g. excel" aria-label="Search tools" autocomplete="off"><kbd class="kb">/</kbd><div class="dd" id="dd"></div></div>
+ <button class="btn g" id="theme" aria-label="Toggle dark mode"><i data-ic="moon"></i></button>
+ <a class="btn g" href="#footer" aria-label="Help"><i data-ic="help"></i></a>
+</header>
+
+<div class="layout">
+<aside class="side" id="side">
+ <a href="#home"><i data-ic="home"></i><span>All tools</span></a>
+ <a href="#merge"><i data-ic="merge"></i><span>Merge</span></a>
+ <a href="#split"><i data-ic="split"></i><span>Split PDF</span></a>
+ <a href="#compress"><i data-ic="compress"></i><span>Compress</span></a>
+ <a href="#topdf"><i data-ic="toPdf"></i><span>Convert to PDF</span></a>
+ <a href="#frompdf"><i data-ic="fromPdf"></i><span>Convert from PDF</span></a>
+</aside>
+
+<main>
+<!-- Home page: intro + tool cards (cards are built by js/ui.js) -->
+<section class="page" id="home">
+ <div class="intro">
+  <h1 id="top">Merge &amp; convert</h1>
+  <p class="sub" style="margin:0">Merge, split and convert your PDF, Word, Excel, PowerPoint, Markdown, image, TXT and CSV files in one place. Upload, choose your settings, download.</p>
+ </div>
+ <h2 class="hh">Choose a tool</h2>
+ <div class="home" id="homegrid"></div>
+</section>
+
+<!-- One page per tool -->
+<section class="tool page" id="merge" hidden><a class="back" href="#home"><i data-ic="arrow"></i>All tools</a><h2>Merge files</h2><p class="sub">Combine several files of the same type into one.</p>
+ <div class="types" id="types"></div><div id="mflow"></div></section>
+<section class="tool page" id="split" hidden><a class="back" href="#home"><i data-ic="arrow"></i>All tools</a><h2>Split PDF</h2><p class="sub">Cut one PDF into smaller files or pull out pages.</p><div id="sflow"></div></section>
+<section class="tool page" id="compress" hidden><a class="back" href="#home"><i data-ic="arrow"></i>All tools</a><h2>Compress files</h2><p class="sub">Pick a JPG, PNG, PDF, PowerPoint or Word file. We find the smallest size that still looks clear, then you choose any size above it.</p><div id="cflow"></div></section>
+<section class="tool page" id="topdf" hidden><a class="back" href="#home"><i data-ic="arrow"></i>All tools</a><h2>Convert to PDF</h2><p class="sub">Turn images, documents and web pages into PDF.</p><div class="grid3" id="tg"></div><div id="tflow" class="res"></div></section>
+<section class="tool page" id="frompdf" hidden><a class="back" href="#home"><i data-ic="arrow"></i>All tools</a><h2>Convert from PDF</h2><p class="sub">Get editable files and images out of a PDF.</p><div class="grid3" id="fg"></div><div id="fflow" class="res"></div></section>
+</main></div>
+
+<!-- Footer: layer 1 = soft colour glow (CSS ::before), layer 2 = frosted glass panels -->
+<footer id="footer"><div class="fwrap">
+ <div class="fc" style="grid-template-columns:1fr"><div>
+  <h3>What you can do</h3>
+  <p class="sm">Merge PDF, Word, Excel, PowerPoint, Markdown, image, TXT and CSV files. Split a PDF by page range, every N pages, into single pages, or by picking or removing pages. Compress JPG, PNG, PDF, PowerPoint and Word files to a size you choose. Convert JPG, Word, PowerPoint, HTML and Markdown to PDF. Convert PDF to JPG, Word, PowerPoint, PDF/A and Markdown. Preview the result before you download.</p>
+ </div></div>
+ <p class="sm fbar">Your files are deleted automatically after processing | Privacy | &copy; Merge &amp; convert</p>
+</div></footer>
+
+<nav class="tabs" aria-label="Tools"><a href="#merge"><i data-ic="merge"></i><span>Merge</span></a><a href="#split"><i data-ic="split"></i><span>Split</span></a><a href="#compress"><i data-ic="compress"></i><span>Compress</span></a><a href="#topdf"><i data-ic="toPdf"></i><span>To PDF</span></a><a href="#frompdf"><i data-ic="fromPdf"></i><span>From PDF</span></a></nav>
+<div class="tl" id="tl" role="status"></div>
+<dialog id="dlg"><h3 id="dt"></h3><p id="dm" class="sub"></p><div style="display:flex;gap:8px;justify-content:flex-end"><button class="btn s" id="dn">Cancel</button><button class="btn" id="dy">Confirm</button></div></dialog>
+
+<script defer src="js/utils.js"></script>
+<script defer src="js/flow.js"></script>
+<script defer src="js/helpers.js"></script>
+<script defer src="js/frompdf.js"></script>
+<script defer src="js/merge.js"></script>
+<script defer src="js/split.js"></script>
+<script defer src="js/convert.js"></script>
+<script defer src="js/officemerge.js"></script>
+<script defer src="js/preview.js"></script>
+<script defer src="js/compress.js"></script>
+<script defer src="js/ui.js"></script></body></html>
